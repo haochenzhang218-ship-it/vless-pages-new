@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yijia Design Studio — Creative Design &amp; Branding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">Yijia</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Design That Speaks</h1>
+      <p class="hero-sub">We craft digital experiences that blend beauty with purpose.</p>
+      <a href="#contact" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2 class="section-title">About the Studio</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Yijia Design Studio is a boutique creative agency founded on the belief that great design transforms ideas into impact. We specialise in brand identity, UI/UX, and visual storytelling for ambitious brands.</p>
+          <p>Every project begins with listening — understanding your vision, your audience, and the story only you can tell. From there we craft cohesive, human-centred designs that resonate.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Projects Delivered</span></div>
+          <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Happy Clients</span></div>
+          <div class="stat"><span class="stat-num">6</span><span class="stat-label">Years Experience</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h2 class="section-title">What We Do</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">✦</div>
+          <h3>Brand Identity</h3>
+          <p>Logos, colour systems, typography — a visual language that makes your brand unforgettable.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">◆</div>
+          <h3>UI / UX Design</h3>
+          <p>Intuitive interfaces and seamless experiences for web and mobile products.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">●</div>
+          <h3>Visual Storytelling</h3>
+          <p>Editorial design, motion graphics, and presentation decks that captivate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="contact-intro">Have a project in mind? We'd love to hear about it.</p>
+      <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Tell us about your project…" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+      <p class="form-feedback" id="formFeedback"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Yijia Design Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+      });
+    });
+
+    // Contact form feedback (no server)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const fb = document.getElementById('formFeedback');
+      fb.textContent = 'Thanks for reaching out! We\'ll get back to you soon.';
+      fb.style.color = '#00d4aa';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
